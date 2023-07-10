@@ -10,7 +10,7 @@ def multiply(x, y):
 def divide(x, y):
     return x / y
 
-print("사칙연산을 선택 하세요.")
+print("사칙연산을 다시 선택 하세요.")
 print("1.더하기")
 print("2.빼기")
 print("3.곱하기")
