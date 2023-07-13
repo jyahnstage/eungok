@@ -1,0 +1,39 @@
+import argparse
+
+class Car:
+    def __init__(self, brand, door, color, speed):
+        self.brand = brand
+        self.door = door
+        self.color = color
+        self.speed = speed
+
+    def __str__(self):
+        return f'brand={self.brand}, door={self.door}도어, color={self.color}, speed={self.speed}'
+
+    def rapid(self):
+        print(f'{self.brand}사의 {self.door}도어, {self.color}의 자동차가 시속{self.speed}km로 달립니다')
+
+
+def parsing_argument():
+    parser = argparse.ArgumentParser(description='Sample for using argparse',
+                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    #positional arguments
+    parser.add_argument(
+        '-c',
+        '--car',
+        metavar='string',
+        type=str,
+        nargs='*',
+        help="Give a car a brand, number of doors, color, and speed.",
+        default=["KIA", "4", "청록색", "90"]
+    )
+    
+    args = parser.parse_args()
+    return args
+
+def main():
+    args = parsing_argument()
+    car = Car(args.car[0],args.car[1],args.car[2],args.car[3])
+    car.rapid()
+
+main()

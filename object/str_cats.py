@@ -14,3 +14,4 @@ nero = Cat("네로", "검은색")
 
 print(nabi)
 print(nero)
+nabi.lotto()
